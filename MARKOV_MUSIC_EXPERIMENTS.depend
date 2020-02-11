@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1581375026 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.c
+	<stdio.h>
+	<stdlib.h>
+	"STRUKTURY.h"
+	<string.h>
+
+1581374948 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\struktury.h
+
+1581374693 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PLIKI.h"
+	"STRUKTURY.h"
+	"MARKOV.h"
+	<time.h>
+
+1581374976 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.h
+	"STRUKTURY.h"
+
+1581374757 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
+	"STRUKTURY.h"
+	"PLIKI.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+	"dev.h"
+
+1581374434 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.h
+
+1580940179 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\sort.c
+	<stdlib.h>
+	"STRUKTURY.h"
+	<stdio.h>
+
+1581012573 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\dev.h
+
+1581014178 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\dev.c
+	<stdio.h>
+	<stdlib.h>
+	"STRUKTURY.h"
+	"PLIKI.h"
+	"MARKOV.h"
+
