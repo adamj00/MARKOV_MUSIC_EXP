@@ -7,7 +7,7 @@
 
 1581425604 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\struktury.h
 
-1581428871 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
+1581437133 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
 	<stdio.h>
 	<stdlib.h>
 	"PLIKI.h"
@@ -19,7 +19,7 @@
 1581374976 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.h
 	"STRUKTURY.h"
 
-1581374757 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
+1581435939 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
 	"STRUKTURY.h"
 	"PLIKI.h"
 	<stdlib.h>
@@ -44,9 +44,9 @@
 	"PLIKI.h"
 	"MARKOV.h"
 
-1581425573 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.h
+1581436046 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.h
 
-1581428639 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.c
+1581437615 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>

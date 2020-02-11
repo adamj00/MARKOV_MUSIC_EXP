@@ -4,8 +4,8 @@
 #include "STRUKTURY.h"
 #include "MARKOV.h"
 #include "RYTM.h"
-#define PLIK "input\\BACH_sar.abc"
-#define dlugosc_lancucha 5
+#define PLIK "input\\BACH.abc"
+#define dlugosc_lancucha 100
 #include <time.h>
 int main()
 {
@@ -41,8 +41,13 @@ int main()
 
     Utwor rezultat = sklej_utwor(lancuchy,dlugosc/dlugosc_lancucha);
 
+    Utwor do_rytmu = czytaj_z_pliku("input\\rytm.abc");
+
+    Rytm rytm = analizuj_rytm(do_rytmu);
+
+    nadaj_rytm(&rezultat,rytm);
+
     zapisz_utwor(rezultat);
-    analizuj_rytm(zrodlo);
 
     return 0;
 }

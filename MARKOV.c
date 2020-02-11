@@ -5,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 #include "dev.h"
-#define dlugosc_lancucha 5
+#define dlugosc_lancucha 100
 
 
 
@@ -137,7 +137,7 @@ void zapisz_utwor (Utwor utwor){
         printf("BLAD");
         exit(1);
     }
-    fprintf(plik,"X: 1\nT: melodia losowa\nM: 4/4\nQ: 60\nK: C maj\nL: 1/16\n");
+    fprintf(plik,"X: 1\nT: melodia losowa\nM: 3/4\nQ: 60\nK: C maj\nL: 1/4\n");
     for (int i=0;i<utwor.dlugosc;i++){
         fprintf(plik,"%s\n",utwor.dzwieki[i]);
     }

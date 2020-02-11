@@ -21,27 +21,75 @@ int czy_dzwiek (char *napis){
     }
 
     //WARUNEK II i III
-    char dozwolone [31] = "^,/123456789abcdefghABCDEFGH'z";
-    if (strspn(napis,dozwolone) < strlen(napis))
+    char *dozwolone = malloc (31 * sizeof (char));
+    dozwolone = "^,/123456789abcdefghABCDEFGH'z";
+    if (strspn(napis,dozwolone) < strlen(napis)){
+        free (dozwolone);
         return 0;
+    }
+    free (dozwolone);
     return 1;
 
 }
 
 Rytm analizuj_rytm(Utwor utwor){
     Rytm rytm;
-    rytm.wartosci_rytmiczne = malloc(utwor.dlugosc * sizeof(char*));
 
     int ile = 0;
 
     for (int i=0;i<utwor.dlugosc;i++){
-        if (czy_dzwiek(utwor.dzwieki[i])){
+        if (czy_dzwiek(utwor.dzwieki[i]))
             ile ++;
-            printf ("%s ",utwor.dzwieki[i]);
-        }
-
     }
+    rytm.wartosci_rytmiczne = malloc(ile * sizeof(char*));
+    rytm.dlugosc = ile;
 
-printf ("\nile nie dzwiekow:%d\n",utwor.dlugosc-ile);
+    int rytm_poz;
+    char *glowa = malloc (20*sizeof (char));
+    glowa = "abcdefgABCDEFG,'^";
+    int idx=0;
+    for (int i=0;i<utwor.dlugosc;i++){
+        if (czy_dzwiek(utwor.dzwieki[i])){
+            rytm_poz = strspn(utwor.dzwieki[i],glowa);
+            rytm.wartosci_rytmiczne[idx] = malloc ( (strlen(utwor.dzwieki[i]) - rytm_poz + 1) * sizeof (char) );
+            for (int j=0;j<strlen(utwor.dzwieki[i]) - rytm_poz;j++){
+                rytm.wartosci_rytmiczne[idx][j] = utwor.dzwieki[i][j+rytm_poz];
+            }
+            rytm.wartosci_rytmiczne[strlen(utwor.dzwieki[i]) - rytm_poz] = '\0';
+            idx++;
+        }
+    }
+    free (glowa);
+
+
     return rytm;
+}
+
+void nadaj_rytm (Utwor *utwor, Rytm rytm){
+    int j=0;
+    int idx,idxr;
+    char *po_zlaczeniu;
+    for (int i=0;i<utwor->dlugosc;i++){
+        if (j == rytm.dlugosc)
+            j=0;
+        if (rytm.wartosci_rytmiczne[j] != NULL){
+
+            po_zlaczeniu = malloc (36 * sizeof (char));
+            idx = 0;
+            while (utwor->dzwieki[i][idx] != '\0'){
+                po_zlaczeniu[idx] = utwor->dzwieki[i][idx];
+                idx++;
+            }
+            idxr = 0;
+            while (rytm.wartosci_rytmiczne[j][idxr] != '\0'){
+                po_zlaczeniu[idx] = rytm.wartosci_rytmiczne[j][idxr];
+                idxr++;
+                idx++;
+            }
+            po_zlaczeniu[idx] = '\0';
+
+            utwor->dzwieki [i] = po_zlaczeniu;
+        }
+        j++;
+    }
 }
