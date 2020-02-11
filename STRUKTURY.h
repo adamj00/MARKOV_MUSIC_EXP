@@ -3,6 +3,11 @@
 
 #define ILE_DZWIEKOW 48
 
+typedef struct Rytm{
+    int dlugosc;
+    char **wartosci_rytmiczne;
+}Rytm;
+
 typedef struct Utwor{
     int dlugosc;
     char **dzwieki;

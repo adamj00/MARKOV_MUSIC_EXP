@@ -3,7 +3,8 @@
 #include "PLIKI.h"
 #include "STRUKTURY.h"
 #include "MARKOV.h"
-#define PLIK "input\\BACH_ALLEMANDE.abc"
+#include "RYTM.h"
+#define PLIK "input\\BACH_sar.abc"
 #define dlugosc_lancucha 5
 #include <time.h>
 int main()
@@ -41,6 +42,7 @@ int main()
     Utwor rezultat = sklej_utwor(lancuchy,dlugosc/dlugosc_lancucha);
 
     zapisz_utwor(rezultat);
+    analizuj_rytm(zrodlo);
 
     return 0;
 }

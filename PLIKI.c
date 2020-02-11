@@ -37,7 +37,7 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
     int ile_pop=0;
     char *trash = malloc (2048*sizeof (char));
     while (fscanf (plik,"%s",trash) != EOF){
-        if (znajdz_dzwiek(trash) != -1)
+        //if (znajdz_dzwiek(trash) != -1)
             ile_pop++;
     }
     Utwor utwor;
@@ -49,10 +49,10 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
     while (i<ile_pop){
         dzwiek = malloc (2048*sizeof (char));
         fscanf (plik,"%s",dzwiek);
-            if (znajdz_dzwiek(dzwiek) != -1){
+            //if (znajdz_dzwiek(dzwiek) != -1){
             utwor.dzwieki[i] = dzwiek;
             i++;
-            }
+           // }
         }
 
         utwor.dlugosc = ile_pop;
