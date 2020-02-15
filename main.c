@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "PLIKI.h"
+#include "SORT.h"
 #include "STRUKTURY.h"
 #include "MARKOV.h"
 #include "RYTM.h"
 #define PLIK "input\\BACH.abc"
-#define dlugosc_lancucha 100
+#define dlugosc_lancucha 10
 #include <time.h>
 int main()
 {
@@ -19,7 +20,15 @@ int main()
         rozklad[i] = malloc (ILE_DZWIEKOW * sizeof (double));
     }
 
-    Utwor zrodlo = czytaj_z_pliku(PLIK);
+    char nazwa_zrodlo[100];
+    char nazwa_rytm[100];
+
+    printf("Podaj nazwe pliku, na podstawie ktorego ma zostac utworzona macierz przejsc: ");
+    scanf ("%s",nazwa_zrodlo);
+    printf("\nPodaj nazwe pliku z rytmem: ");
+    scanf ("%s",nazwa_rytm);
+
+    Utwor zrodlo = czytaj_z_pliku(nazwa_zrodlo);
 
     analizuj_rozklad(zrodlo, rozklad);
 
@@ -34,14 +43,11 @@ int main()
          lancuchy[i] = generuj_lancuch(dlugosc_lancucha,rozklad,zarodek);
     }
 
-    for (int i=0;i<dlugosc/dlugosc_lancucha;i++){
-        printf ("lancuch %d:",i);
-        printLancuch(lancuchy[i]);
-    }
+    sortuj(lancuchy,dlugosc/dlugosc_lancucha);
 
     Utwor rezultat = sklej_utwor(lancuchy,dlugosc/dlugosc_lancucha);
 
-    Utwor do_rytmu = czytaj_z_pliku("input\\rytm.abc");
+    Utwor do_rytmu = czytaj_z_pliku(nazwa_rytm);
 
     Rytm rytm = analizuj_rytm(do_rytmu);
 

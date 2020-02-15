@@ -1,16 +1,18 @@
 # depslib dependency file v1.0
-1581425573 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.c
+1581591124 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.c
 	<stdio.h>
 	<stdlib.h>
 	"STRUKTURY.h"
 	<string.h>
+	"RYTM.h"
 
-1581425604 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\struktury.h
+1581592176 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\struktury.h
 
-1581437133 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
+1581682258 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
 	<stdio.h>
 	<stdlib.h>
 	"PLIKI.h"
+	"SORT.h"
 	"STRUKTURY.h"
 	"MARKOV.h"
 	"RYTM.h"
@@ -19,7 +21,7 @@
 1581374976 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.h
 	"STRUKTURY.h"
 
-1581435939 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
+1581675486 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
 	"STRUKTURY.h"
 	"PLIKI.h"
 	<stdlib.h>
@@ -30,7 +32,7 @@
 
 1581374434 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.h
 
-1580940179 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\sort.c
+1581805656 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\sort.c
 	<stdlib.h>
 	"STRUKTURY.h"
 	<stdio.h>
@@ -44,12 +46,14 @@
 	"PLIKI.h"
 	"MARKOV.h"
 
-1581436046 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.h
+1581450992 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.h
 
-1581437615 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.c
+1581594345 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\rytm.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	"PLIKI.h"
 	"STRUKTURY.h"
+
+1581682258 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\sort.h
 

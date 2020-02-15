@@ -1,0 +1,88 @@
+%abc-2.1
+%%song-title       BACH_ALLEMANDE
+%%song-duration    2:35
+%%abc-creator Maestro v2.5.0
+%%abc-version 2.1
+
+X: 1
+T: BACH_ALLEMANDE (2:35) - Lute of Ages
+%%part-name Lute of Ages
+M: 4/4
+Q: 100
+K: C maj
+
++f+ z e a ^g a c' a e a e a g a c' a e |
+a c' e f ^g f e d c' e g a e d c' b |
+a c' e f ^g f e d c' e g a e d c' b |
+a c' ^g a f d g a e c' g a d c' b a |
+^g e g b e g b d f d b g e d c' b |
+c' a c' e a c' e f g ^a g e c' a =a g |
+a f a c' d f a c' b g b d e g b d |
+c' a c' e f a c' e d b d ^f g b d =f |
+e g c' b c' e c' g c' g c' b c' e c' g |
+% Bar 10 (0:21)
+c' g ^a =a ^a e a g c' g a =a ^a e a g |
+^c g ^a =a ^a e a g c g e c =a g f e |
+d g f e f a f d b ^g b d e d c' b |
+c' e a ^g a c' a ^f ^d b d f b a =g f |
+g ^f e g a e g c' f e d f g d f b |
+e d c' e ^f e f a ^d b c' a d c' b a |
+g e f d ^g f e d a ^f =g e ^a g f e |
+^d b ^g =d ^c a ^f c' b =g e ^a =a f ^d a |
+g e c' a ^f c' a f ^d f a c' b a g f |
+g ^f e b c' g f g f e e4 |
+% Bar 20 (0:45)
+z e a ^g a c' a e a e a g a c' a e |
+a c' e f ^g f e d c' e g a e d c' b |
+a c' e f ^g f e d c' e g a e d c' b |
+a c' ^g a f d g a e c' g a d c' b a |
+^g e g b e g b d f d b g e d c' b |
+c' a c' e a c' e f g ^a g e c' a =a g |
+a f a c' d f a c' b g b d e g b d |
+c' a c' e f a c' e d b d ^f g b d =f |
+e g c' b c' e c' g c' g c' b c' e c' g |
+c' g ^a =a ^a e a g c' g a =a ^a e a g |
+% Bar 30 (1:09)
+^c g ^a =a ^a e a g c g e c =a g f e |
+d g f e f a f d b ^g b d e d c' b |
+c' e a ^g a c' a ^f ^d b d f b a =g f |
+g ^f e g a e g c' f e d f g d f b |
+e d c' e ^f e f a ^d b c' a d c' b a |
+g e f d ^g f e d a ^f =g e ^a g f e |
+^d b ^g =d ^c a ^f c' b =g e ^a =a f ^d a |
+g e c' a ^f c' a f ^d f a c' b a g f |
+g ^f e b c' g f g f e e b c' a b g a b |
+e b e ^d e g e b ^f b e d e g e b |
+% Bar 40 (1:33)
+e g b c' ^d c' b a g b d e b a g ^f |
+e g b c' ^d c' b a g b d e b a g ^f |
+e g ^d e b ^g =d e c' a ^d e g f e =d |
+a c' ^g a e ^c =g a f d ^g a c ^a =a =g |
+f a d ^c d f d a d a d c d f d a |
+d a c' b c' ^f c' a d a c' b c' f c' a |
+d c' ^f e d c' b a e d c' b f e d c' |
+b d g ^f g b g d g d g f g b g d |
+g d f e f b f d g d f e f b f d |
+g f b a g f e d a g f e b a g f |
+% Bar 50 (1:57)
+e g e c' ^a =a ^a g =a b ^c d e f g e |
+f a f d c' b c' a b ^c ^d e ^f ^g a f |
+^g b g e d c' d b c' e g a g f e d |
+a c' e f e d c' ^a f =a ^c d a g f e |
+d f ^c d a ^f c' d b ^g e =f a f c d |
+^g f ^c d b a g ^f e d c' b a g f e |
+d b c' e a b c' d e ^f ^g a b g a c' |
+^d ^f c' b e ^g c' b f a c' b b c' b a |
+^g e f e a e f e b e f e d f e d |
+c' a c' e a g f e f a f d d c' b a |
+% Bar 60 (2:21)
+^g e ^c =g ^f d b f e c' a ^d =d ^a ^g d |
+c' a f d b f d b ^g b d f e d c' b |
+c' e a c' b a e ^g a a =g e f a e g |
+d f e ^c d ^a c' =a ^g e d b c' e b d |
+a c' d b e a b ^g a e a c' e a c' e |
+a e a c' e a c' e
+	%%Q: 50
+	a8 |
+z16 |]
+

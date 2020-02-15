@@ -1,4 +1,4 @@
-#include <stdlib.h>
+    #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "PLIKI.h"
@@ -45,22 +45,34 @@ Rytm analizuj_rytm(Utwor utwor){
     rytm.dlugosc = ile;
 
     int rytm_poz;
-    char *glowa = malloc (20*sizeof (char));
+    char *glowa = malloc (25*sizeof (char));
     glowa = "abcdefgABCDEFG,'^";
     int idx=0;
     for (int i=0;i<utwor.dlugosc;i++){
         if (czy_dzwiek(utwor.dzwieki[i])){
+
+            if (strchr(utwor.dzwieki[i],'z') != NULL){
+                rytm.wartosci_rytmiczne[idx] = malloc ( (strlen(utwor.dzwieki[i]) + 1) * sizeof (char) );
+                strcpy(rytm.wartosci_rytmiczne[idx],utwor.dzwieki[i]);
+                idx++;
+            }
+
+            else{
+
             rytm_poz = strspn(utwor.dzwieki[i],glowa);
             rytm.wartosci_rytmiczne[idx] = malloc ( (strlen(utwor.dzwieki[i]) - rytm_poz + 1) * sizeof (char) );
             for (int j=0;j<strlen(utwor.dzwieki[i]) - rytm_poz;j++){
                 rytm.wartosci_rytmiczne[idx][j] = utwor.dzwieki[i][j+rytm_poz];
             }
-            rytm.wartosci_rytmiczne[strlen(utwor.dzwieki[i]) - rytm_poz] = '\0';
+            rytm.wartosci_rytmiczne[idx][strlen(utwor.dzwieki[i]) - rytm_poz] = '\0';
             idx++;
+        }
         }
     }
     free (glowa);
 
+  //  for (int i=0;i<rytm.dlugosc;i++)
+    //    printf ("'%s' ",rytm.wartosci_rytmiczne[i]);
 
     return rytm;
 }
@@ -75,6 +87,15 @@ void nadaj_rytm (Utwor *utwor, Rytm rytm){
         if (rytm.wartosci_rytmiczne[j] != NULL){
 
             po_zlaczeniu = malloc (36 * sizeof (char));
+
+
+            if (strchr(rytm.wartosci_rytmiczne[j],'z') != NULL){
+
+                    strcpy(po_zlaczeniu,rytm.wartosci_rytmiczne[j]);
+                    utwor->dzwieki[i] = po_zlaczeniu;
+            }
+
+            else {
             idx = 0;
             while (utwor->dzwieki[i][idx] != '\0'){
                 po_zlaczeniu[idx] = utwor->dzwieki[i][idx];
@@ -89,6 +110,7 @@ void nadaj_rytm (Utwor *utwor, Rytm rytm){
             po_zlaczeniu[idx] = '\0';
 
             utwor->dzwieki [i] = po_zlaczeniu;
+        }
         }
         j++;
     }

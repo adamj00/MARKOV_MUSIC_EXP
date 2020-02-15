@@ -1,0 +1,26 @@
+%abc-2.1
+%%song-title       Blues Licks - BB King Scale And Examples
+%%song-duration    0:31
+%%abc-creator Maestro v2.5.0
+%%abc-version 2.1
+
+X: 1
+T: Blues Licks - BB King Scale And Examples (0:31) - Lute of Ages
+%%part-name Lute of Ages
+M: 6/4
+Q: 120
+K: C maj
+
++fff+ ^f2 a2 b2 c'2 d2 e2 |
+z4 z z// ^f3/4 a2 b/ c' ^c5/2 |
+b// z7/4 e- e// a19/4 z z// ^f3/4 a2 |
+a4 z2 c'/ b/ a/ ^f/ a4 |
+z2 e// f/ ^f5/4 e6 c'/ ^c3/4 [e//-b//] e/ |
+a4 z4 f/ ^f/ g e2 |
+f/ ^f/ g e2 =f// ^f// g3/4 e3/4 d- d// c'3/4 a- a// f3/4 a2 |
+b/ c' ^c5/2 b// z a3/4 c'2 d3/4 ^d3/2 e7/4- |
+e2 d// z a19/4 z4 |
+% Bar 10 (0:27)
+A/ B/ c/ ^c/ d/ e/ ^f/ g/ a4 a/ b/ c'/ c/ d/ e/ f/ g/ |
+a4 z4 z4 |]
+

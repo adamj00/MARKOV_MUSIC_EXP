@@ -31,6 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="MARKOV.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MARKOV.h" />
+		<Unit filename="PLIKI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PLIKI.h" />
+		<Unit filename="RYTM.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="RYTM.h" />
+		<Unit filename="SORT.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="STRUKTURY.h" />
+		<Unit filename="dev.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dev.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

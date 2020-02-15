@@ -5,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 #include "dev.h"
-#define dlugosc_lancucha 100
+#define dlugosc_lancucha 10
 
 
 
@@ -16,6 +16,7 @@ void rozklad_z_pliku(){
 
     if (!plik){
         printf("\nPodczas otwierania pliku PORZADANY_ROZKLAD.txt wystapil blad\n");
+        printf("\nPodczas otwierania pliku PORZADANY_ROZKLAD.txt wystapil blad\n");
         exit (1);
     }
 
@@ -24,10 +25,7 @@ void rozklad_z_pliku(){
     }
 
     fclose(plik);
-    printf ("rozklad stacjonarny: ");
-    for (int i=0;i<ILE_DZWIEKOW;i++)
-        printf ("%lf ",rozklad_stacjonarny[i]);
-    printf ("\n");
+
 }
 
 
@@ -81,7 +79,7 @@ int wylosuj (double *prawdopodobienstwa, int zakres, int losowa){
     }
 
     if (!poz_kul){
-        printf ("chuj!\n");
+        //printf ("chuj!\n");
         return wylosuj(rozklad_stacjonarny,ILE_DZWIEKOW,losowa);
     }
   //  for (int i= poz_kul; i<999;i++)
@@ -137,7 +135,14 @@ void zapisz_utwor (Utwor utwor){
         printf("BLAD");
         exit(1);
     }
-    fprintf(plik,"X: 1\nT: melodia losowa\nM: 3/4\nQ: 60\nK: C maj\nL: 1/4\n");
+
+    char metro [100];
+    char tempo [100];
+    printf ("Podaj metro: ");
+    scanf ("%s",metro);
+    printf ("Podaj tempo: ");
+    scanf ("%s",tempo);
+    fprintf(plik,"X: 1\nT: melodia losowa\nM: %s\nQ: %s\nK: C maj\n",metro,tempo);
     for (int i=0;i<utwor.dlugosc;i++){
         fprintf(plik,"%s\n",utwor.dzwieki[i]);
     }

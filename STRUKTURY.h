@@ -1,7 +1,7 @@
 #ifndef STRUKTURY_H_INCLUDED
 #define STRUKTURY_H_INCLUDED
 
-#define ILE_DZWIEKOW 48
+#define ILE_DZWIEKOW 49
 
 typedef struct Rytm{
     int dlugosc;

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "STRUKTURY.h"
 #include <string.h>
+#include "RYTM.h"
 char *lista_dzwiekow [ILE_DZWIEKOW];
 
 void lista_z_pliku (){
@@ -21,11 +22,27 @@ void lista_z_pliku (){
 }
 
 int znajdz_dzwiek (char *dzwiek){
+    if (dzwiek == NULL)
+        return -1;
+    if (!czy_dzwiek(dzwiek)){
+        printf ("%s ",dzwiek);
+        return -1;
+    }
     for (int i=0;i<ILE_DZWIEKOW;i++){
         if (!strcmp(lista_dzwiekow[i],dzwiek))
             return i;
     }
-    return -1;
+
+    char *glowa = malloc (20*sizeof (char));
+    glowa = "abcdefgABCDEFG,'^";
+    int pozycja = strspn(dzwiek,glowa);
+    char *nowy_dzwiek  = malloc ( (2+pozycja) * sizeof (char));
+    nowy_dzwiek [pozycja] = '\0';
+    for (int i=0;i<pozycja;i++){
+        nowy_dzwiek [i] = dzwiek [i];
+    }
+    free (nowy_dzwiek);
+    return znajdz_dzwiek(nowy_dzwiek);
 }
 
 Utwor czytaj_z_pliku (char *nazwa_pliku){
@@ -35,7 +52,8 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
         exit(1);
     }
     int ile_pop=0;
-    char *trash = malloc (2048*sizeof (char));
+    //char *trash = malloc (5056*sizeof (char));
+    char trash [2048];
     while (fscanf (plik,"%s",trash) != EOF){
         //if (znajdz_dzwiek(trash) != -1)
             ile_pop++;
@@ -57,7 +75,7 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
 
         utwor.dlugosc = ile_pop;
 
-    free (trash);
+   // free (trash);
     fclose(plik);
     printf ("dlugosc utworu: %d\n",utwor.dlugosc);
     return utwor;
