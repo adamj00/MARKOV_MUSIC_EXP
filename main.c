@@ -6,8 +6,9 @@
 #include "MARKOV.h"
 #include "RYTM.h"
 #define PLIK "input\\BACH.abc"
-#define dlugosc_lancucha 10
+#define dlugosc_lancucha 8
 #include <time.h>
+#include  "SKALE.h"
 int main()
 {
     lista_z_pliku();
@@ -30,8 +31,19 @@ int main()
 
     Utwor zrodlo = czytaj_z_pliku(nazwa_zrodlo);
 
-    analizuj_rozklad(zrodlo, rozklad);
 
+    int wybor;
+    printf ("Wybierz algorytm:\n[0] Algorytm losowania na podstawie dzwiekow\n[1] Algorytm losowania na podstawie interwalow (+ wybor skali)\n");
+    scanf ("%d", &wybor);
+
+    Skala skala;
+
+    if (!wybor)
+        analizuj_rozklad(zrodlo, rozklad);
+    else {
+        analizuj_interwaly(zrodlo);
+        skala = stworz_skale();
+    }
     Markov lancuchy[dlugosc/dlugosc_lancucha];
 
     time_t tt;
@@ -40,7 +52,14 @@ int main()
 
     for (int i=0;i<dlugosc/dlugosc_lancucha;i++){
          zarodek = rand();
-         lancuchy[i] = generuj_lancuch(dlugosc_lancucha,rozklad,zarodek);
+         if (!wybor)
+            lancuchy[i] = generuj_lancuch(dlugosc_lancucha,rozklad,zarodek);
+         else{
+            lancuchy[i] = generuj_lancuch_SKALE(dlugosc_lancucha,skala,zarodek);
+         }
+            for (int j=0; j<lancuchy[i].dlugosc; j++){
+                printf ("%d ", lancuchy[i].lancuch[j]);
+            }
     }
 
     sortuj(lancuchy,dlugosc/dlugosc_lancucha);

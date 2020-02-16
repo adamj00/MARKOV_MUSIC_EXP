@@ -19,4 +19,11 @@ typedef struct Markov{
     int *lancuch;
 }Markov;
 
+typedef struct Skala{
+    int *dzwieki;
+    int *cykl;
+    int dlugosc_cyklu;
+    int dlugosc;
+}Skala;
+
 #endif // STRUKTURY_H_INCLUDED

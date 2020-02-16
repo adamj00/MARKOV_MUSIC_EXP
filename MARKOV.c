@@ -5,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 #include "dev.h"
-#define dlugosc_lancucha 10
+#define dlugosc_lancucha 8
 
 
 
@@ -149,4 +149,7 @@ void zapisz_utwor (Utwor utwor){
     printf("\nZAPISANO.\n");
     fclose(plik);
 
+}
+void pokaz_dzwiek (int dzwiek){
+    printf ("%s\n",lista_dzwiekow[dzwiek]);
 }
