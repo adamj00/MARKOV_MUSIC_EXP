@@ -1,0 +1,35 @@
+%abc-2.1
+%%song-title       Rock Licks - Improvisation
+%%song-duration    0:44
+%%abc-creator Maestro v2.5.0
+%%abc-version 2.1
+
+X: 1
+T: Rock Licks - Improvisation (0:44) - Lute of Ages
+%%part-name Lute of Ages
+M: 4/4
+Q: 80
+K: C maj
+
++fff+ [G,2D2G2] [B,2E2^G2] [G,2D2=G2] [^C2^F2^A2] |
+a// c'/ e// a// e/ c'// a// c'/ e// a// e/ b// a// b/ e// a// e/ b// a// b/ e// ^g// e/ b// |
+^g// b/ e// f// e/ d// d// f/ c'// b// f/ a// g// e/ ^f// g// a/ b// a// b/ e// d// c'/ b// |
+a// c'/ e// e// a/ b// a// ^c/ e// ^a// g/ e// ^f// d/ b// =a// d/ f// =f// d/ b// ^g// d/ g// |
+a// e/ c'// e// a/ b// d// b/ ^g// f// g/ b// c'// a/ ^f// ^d// a/ c'// b// a/ e// =d// g/ b// |
+e// d/ b// c'// a/ ^g// b// d/ f// a// e/ c'// b// f/ d// =g// d/ f// e// c'/ g// f// e/ g// |
+a// b/ c'// ^f// ^d/ a// g// f/ a// d// f/ e// b// g/ =d// c'// g/ ^d// b// a/ f// d// a/ B// |
+e// g// ^f// b// g// a// c'// a// f// b// e// e// b// a// b// c'// d// b// ^g// b// d// =f// e// g// a// b// e// e// a// A// e// d// |
+^c// g// ^a// =a// g// g// ^a// g// =a// c// e// g// f// d// a// d// c'// ^d// a// ^f// d// c'// =d// ^d// e// b// a// ^g// e// g// f// e// |
+% Bar 10 (0:27)
+%%Q: 120
+a/6 c'/3 e/6 a/6 e/3 c'/6 a/6 c'/3 e/6 a/6 e/3 b/6 a/6 b/3 e/6 a/6 e/3 b/6 a/6 b/3 e/6 ^g/6 e/3 b/6 |
+^g/6 b/3 e/6 f/6 e/3 d/6 d/6 f/3 c'/6 b/6 f/3 a/6 g/6 e/3 ^f/6 g/6 a/3 b/6 a/6 b/3 e/6 d/6 c'/3 b/6 |
+a/6 c'/3 e/6 e/6 a/3 b/6 a/6 ^c/3 e/6 ^a/6 g/3 e/6 ^f/6 d/3 b/6 =a/6 d/3 f/6 =f/6 d/3 b/6 ^g/6 d/3 g/6 |
+a/6 e/3 c'/6 e/6 a/3 b/6 d/6 b/3 ^g/6 f/6 g/3 b/6 c'/6 a/3 ^f/6 ^d/6 a/3 c'/6 b/6 a/3 e/6 =d/6 g/3 b/6 |
+e/6 d/3 b/6 c'/6 a/3 ^g/6 b/6 d/3 f/6 a/6 e/3 c'/6 b/6 f/3 d/6 =g/6 d/3 f/6 e/6 c'/3 g/6 f/6 e/3 g/6 |
+a/6 b/3 c'/6 ^f/6 ^d/3 a/6 g/6 f/3 a/6 d/6 f/3 e/6 b/6 g/3 =d/6 c'/6 g/3 ^d/6 b/6 a/3 f/6 d/6 a/3 B/6 |
+e/6 g/6 ^f/6 b/6 g/6 a/6 c'/6 a/6 f/6 b/6 e/6 e/6 b/6 a/6 b/6 c'/6 d/6 b/6 ^g/6 b/6 d/6 =f/6 e/6 g/6 a/6 b/6 e/6 e/6 a/6 A/6 e/6 d/6 |
+^c/6 g/6 ^a/6 =a/6 g/6 g/6 ^a/6 g/6 =a/6 c/6 e/6 g/6 f/6 d/6 a/6 d/6 c'/6 ^d/6 a/6 ^f/6 d/6 c'/6 =d/6 ^d/6 e/6 b/6 a/6 ^g/6 e/6 g/6 f/6 e/6 |
+[A,16/3E16/3A16/3] |
+z16/3 |]
+

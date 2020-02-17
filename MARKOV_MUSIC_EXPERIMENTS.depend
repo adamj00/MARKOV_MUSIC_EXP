@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1581591124 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.c
+1581956299 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.c
 	<stdio.h>
 	<stdlib.h>
 	"STRUKTURY.h"
 	<string.h>
 	"RYTM.h"
 
-1581891057 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\struktury.h
+1581951118 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\struktury.h
 
-1581891436 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
+1581955400 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\main.c
 	<stdio.h>
 	<stdlib.h>
 	"PLIKI.h"
@@ -19,10 +19,10 @@
 	<time.h>
 	"SKALE.h"
 
-1581374976 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.h
+1581954445 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\pliki.h
 	"STRUKTURY.h"
 
-1581891436 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
+1581954846 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.c
 	"STRUKTURY.h"
 	"PLIKI.h"
 	<stdlib.h>
@@ -31,7 +31,7 @@
 	<time.h>
 	"dev.h"
 
-1581374434 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.h
+1581954424 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\markov.h
 
 1581805656 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\sort.c
 	<stdlib.h>
@@ -58,11 +58,11 @@
 
 1581682258 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\sort.h
 
-1581890785 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\skale.c
+1581955463 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\skale.c
 	<stdlib.h>
 	<stdio.h>
 	"STRUKTURY.h"
 	<time.h>
 
-1581856512 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\skale.h
+1581954424 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\skale.h
 

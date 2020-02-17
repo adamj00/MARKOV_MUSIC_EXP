@@ -10,26 +10,12 @@ void pokaz_dzwiek (int dzwiek);
 int *prawd_interwalu;
 int **macierz_interwalow;
 
-Skala stworz_skale () {
+Skala stworz_skale (Ustawienia ust) {
     Skala skala;
     skala.dlugosc = ILE_DZWIEKOW;
 
-    int wybor;
-    printf ("Wybierz typ skali:\n[0] Molowa\n[1] Durowa\n[2] Niestandardowa\n");
-    scanf ("%d",&wybor);
 
-    if (wybor == 2){
-        printf ("Podaj dlugosc cyklu: ");
-        scanf ("%d",&skala.dlugosc_cyklu);
-        skala.cykl = malloc (skala.dlugosc_cyklu * sizeof (int));
-        printf ("Podaj %d interwalow: ",skala.dlugosc_cyklu);
-        for (int i=0; i<skala.dlugosc_cyklu; i++){
-            scanf ("%d", &skala.cykl[i]);
-        }
-    }
-
-    else {
-        if (wybor == 0){
+        if (ust.skala == 0){
             skala.dlugosc_cyklu = 7;
             int cykl [] = {2,1,2,2,1,2,2};
             skala.cykl = malloc (skala.dlugosc_cyklu * sizeof (int));
@@ -37,19 +23,22 @@ Skala stworz_skale () {
                 skala.cykl[i] = cykl[i];
         }
 
-        if (wybor == 1){
+        if (ust.skala == 1){
             skala.dlugosc_cyklu = 7;
             int cykl[7] = {2,2,1,2,2,2,1};
             skala.cykl = malloc (skala.dlugosc_cyklu * sizeof (int));
             for (int i=0; i<skala.dlugosc_cyklu; i++)
                 skala.cykl[i] = cykl[i];
         }
-    }
 
-    printf ("Podaj dzwiek startowy: ");
-    char *dzwiek_startowy = malloc (36 * sizeof (char));
-    scanf ("%s", dzwiek_startowy);
-    int pierwszy = znajdz_dzwiek(dzwiek_startowy);
+        if (ust.skala == 2){
+            skala.cykl = ust.cykl;
+            skala.dlugosc_cyklu = ust.dlugosc_cyklu;
+        }
+
+
+
+    int pierwszy = znajdz_dzwiek(ust.dzwiek_startowy);
 
     skala.dzwieki = malloc (skala.dlugosc * sizeof (int));
     for (int i=0;i<skala.dlugosc; i++){
@@ -78,8 +67,6 @@ Skala stworz_skale () {
             j = skala.dlugosc_cyklu -1;
 
     }
-
-
 
     return skala;
 }
@@ -126,9 +113,6 @@ void analizuj_interwaly (Utwor utwor){
     }
     free (interwaly);
 
-    for (int i=0;i<ILE_DZWIEKOW*2 -1; i++)
-        printf ("%d ", prawd_interwalu[i]);
-    printf ("\n");
 }
 
 
@@ -171,7 +155,7 @@ Markov generuj_lancuch_SKALE (int dlugosc, Skala skala, int zarodek){
             loop++;
         }while (loop <100 && ( lancuch.lancuch[i-1] + interwal - (ILE_DZWIEKOW-1) > ILE_DZWIEKOW -12 || lancuch.lancuch[i-1] + interwal - (ILE_DZWIEKOW-1) < 0 || skala.dzwieki[lancuch.lancuch[i-1] + interwal - (ILE_DZWIEKOW-1)] == 0));
         if (loop == 100){
-            printf ("zapetlenie!\n");
+            //printf ("zapetlenie!\n");
                     loop = 0;
             do{
                 interwal = wylosuj_interwal(prawd_interwalu,rand());

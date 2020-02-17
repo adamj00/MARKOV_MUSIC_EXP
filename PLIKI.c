@@ -3,6 +3,8 @@
 #include "STRUKTURY.h"
 #include <string.h>
 #include "RYTM.h"
+
+#define skip fscanf(plik,"%s",trash)
 char *lista_dzwiekow [ILE_DZWIEKOW];
 
 void lista_z_pliku (){
@@ -25,7 +27,6 @@ int znajdz_dzwiek (char *dzwiek){
     if (dzwiek == NULL)
         return -1;
     if (!czy_dzwiek(dzwiek)){
-        printf ("%s ",dzwiek);
         return -1;
     }
     for (int i=0;i<ILE_DZWIEKOW;i++){
@@ -77,8 +78,93 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
 
    // free (trash);
     fclose(plik);
-    printf ("dlugosc utworu: %d\n",utwor.dlugosc);
+
     return utwor;
 }
 
+Ustawienia wczytaj_ustawienia () {
+    Ustawienia ust;
+    int wybor;
+    printf ("Wybierz:\n[0] Ustawienia z pliku\n[1] Ustawienia reczne\n");
+    scanf("%d",&wybor);
+    if (wybor){
+        printf ("Podaj dlugosc utworu: ");
+        scanf ("%d", &ust.dlugosc_utworu);
+        printf ("Podaj nazwe pliku z melodia: ");
+        ust.nazwa_melodia = malloc (256 * sizeof (char));
+        scanf ("%s",ust.nazwa_melodia);
+        printf ("Podaj nazwe pliku z rytmem: ");
+        ust.nazwa_rytm = malloc (256 * sizeof (char));
+        scanf ("%s",ust.nazwa_rytm);
+        printf ("Wybierz algorytm:\n[0] Algorytm losowania na podstawie dzwiekow\n[1] Algorytm losowania na podstawie interwalow (+ wybor skali)\n");
+        scanf("%d", &ust.algorytm);
+        if (ust.algorytm){
+            printf ("Wybierz typ skali:\n[0] Molowa\n[1] Durowa\n[2] Niestandardowa\n");
+            scanf ("%d",&ust.skala);
+            if (ust.skala == 2){
+                printf ("Podaj dlugosc cyklu: ");
+                scanf ("%d",&ust.dlugosc_cyklu);
+                printf ("Podaj %d interwalow: ",ust.dlugosc_cyklu);
+                ust.cykl = malloc (ust.dlugosc_cyklu * sizeof (int));
+                for (int i=0; i<ust.dlugosc_cyklu; i++)
+                    scanf ("%d",&ust.cykl[i]);
+            }
+            printf ("Podaj dzwiek startowy: ");
+            ust.dzwiek_startowy = malloc (36* sizeof (char));
+            scanf ("%s",ust.dzwiek_startowy);
+        }
+        printf ("Podaj metrum: ");
+        ust.metrum = malloc (16* sizeof (char));
+        scanf ("%s", ust.metrum);
+        printf ("Podaj tempo: ");
+        ust.tempo = malloc (16* sizeof (char));
+        scanf ("%s", ust.tempo);
+    }
+    else {
+        FILE *plik = fopen ("config\\ustawienia.txt", "rt");
+        if (!plik){
+            printf ("Podczas otwierania pliku z ustawieniami wystapil blad.\n");
+            exit(1);
+        }
+
+        char *trash = malloc (256 * sizeof (char));
+        skip;
+        fscanf (plik,"%d", &ust.dlugosc_utworu);
+        skip;
+        ust.nazwa_melodia = malloc (256 * sizeof (char));
+        fscanf (plik,"%s",ust.nazwa_melodia);
+        skip;
+        ust.nazwa_rytm = malloc (256 * sizeof (char));
+        fscanf (plik,"%s",ust.nazwa_rytm);
+        skip;
+        fscanf (plik, "%d", &ust.algorytm);
+        skip;
+        ust.metrum = malloc (36 * sizeof (char));
+        fscanf (plik, "%s", ust.metrum);
+        skip;
+        ust.tempo = malloc (36 * sizeof (char));
+        fscanf (plik, "%s", ust.tempo);
+        skip;
+        skip;
+        if (ust.algorytm){
+            fscanf(plik,"%d",&ust.skala);
+            skip;
+            ust.dzwiek_startowy = malloc (36 * sizeof (char));
+            fscanf (plik,"%s",ust.dzwiek_startowy);
+            skip;
+            skip;
+            if (ust.skala == 2){
+                fscanf (plik,"%d",&ust.dlugosc_cyklu);
+                skip;
+                ust.cykl = malloc (ust.dlugosc_cyklu * sizeof (int));
+                for (int i=0; i<ust.dlugosc_cyklu; i++)
+                    fscanf (plik, "%d", &ust.cykl[i]);
+            }
+        }
+        fclose (plik);
+        free (trash);
+    }
+
+    return ust;
+}
 

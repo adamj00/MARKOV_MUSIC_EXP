@@ -1,0 +1,12 @@
+długość: 1000
+melodia: input\\BACH.abc
+rytm: input\\BACH.abc
+algorytm: 0
+metrum: 4/4
+tempo: 100
+//ustawienia_skali
+skala: 
+dźw_startowy: 
+//niestandardowa_skala
+dł_cyklu: 
+cykl: 

@@ -5,7 +5,6 @@
 #include <string.h>
 #include <time.h>
 #include "dev.h"
-#define dlugosc_lancucha 8
 
 
 
@@ -15,7 +14,6 @@ void rozklad_z_pliku(){
     FILE *plik = fopen ("config\\PORZADANY_ROZKLAD.txt","rt");
 
     if (!plik){
-        printf("\nPodczas otwierania pliku PORZADANY_ROZKLAD.txt wystapil blad\n");
         printf("\nPodczas otwierania pliku PORZADANY_ROZKLAD.txt wystapil blad\n");
         exit (1);
     }
@@ -67,9 +65,8 @@ double akceptacja (int x, int y){
 
 int wylosuj (double *prawdopodobienstwa, int zakres, int losowa){
 
-//dodac dynamiczne alkowanie pamieci
 
-    int kulki [1000];
+    int *kulki  = malloc (1000 * sizeof (int));
     int poz_kul = 0;
     for (int i=0;i<zakres;i++){
         for (int j=0;j<prawdopodobienstwa[i]*1000;j++){
@@ -79,13 +76,11 @@ int wylosuj (double *prawdopodobienstwa, int zakres, int losowa){
     }
 
     if (!poz_kul){
-        //printf ("chuj!\n");
         return wylosuj(rozklad_stacjonarny,ILE_DZWIEKOW,losowa);
     }
-  //  for (int i= poz_kul; i<999;i++)
-     //   kulki[i] = zakres/3;
 
     int wynik = kulki [losowa%poz_kul];
+    //free (kulki);
     return wynik%zakres;
 }
 
@@ -129,20 +124,14 @@ Utwor sklej_utwor (Markov *lancuchy,  int ile_lancuchow){
     return utwor;
 }
 
-void zapisz_utwor (Utwor utwor){
+void zapisz_utwor (Utwor utwor, Ustawienia ust){
     FILE *plik = fopen ("output\\rezultat.abc","wt");
     if (!plik){
         printf("BLAD");
         exit(1);
     }
 
-    char metro [100];
-    char tempo [100];
-    printf ("Podaj metro: ");
-    scanf ("%s",metro);
-    printf ("Podaj tempo: ");
-    scanf ("%s",tempo);
-    fprintf(plik,"X: 1\nT: melodia losowa\nM: %s\nQ: %s\nK: C maj\n",metro,tempo);
+    fprintf(plik,"X: 1\nT: melodia losowa\nM: %s\nQ: %s\nK: C maj\n",ust.metrum,ust.tempo);
     for (int i=0;i<utwor.dlugosc;i++){
         fprintf(plik,"%s\n",utwor.dzwieki[i]);
     }
@@ -150,6 +139,4 @@ void zapisz_utwor (Utwor utwor){
     fclose(plik);
 
 }
-void pokaz_dzwiek (int dzwiek){
-    printf ("%s\n",lista_dzwiekow[dzwiek]);
-}
+

@@ -7,5 +7,5 @@ Utwor sklej_utwor (Markov *lancuchy,  int ile_lancuchow);
 int wylosuj (double *prawdopodobienstwa, int zakres, int losowa);
 double akceptacja (int x, int y);
 void printLancuch (Markov lancuch);
-void zapisz_utwor (Utwor utwor);
+void zapisz_utwor (Utwor utwor, Ustawienia ust);
 #endif // MARKOV_H_INCLUDED
