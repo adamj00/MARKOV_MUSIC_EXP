@@ -27,11 +27,11 @@ int main()
 
     if (!ust.algorytm)
         analizuj_rozklad(zrodlo, rozklad);
+
     else {
         analizuj_interwaly(zrodlo);
         skala = stworz_skale(ust);
     }
-
     Markov lancuchy[ust.dlugosc_utworu/dlugosc_lancucha];
 
     time_t tt;

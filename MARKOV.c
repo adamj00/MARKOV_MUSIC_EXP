@@ -66,7 +66,7 @@ double akceptacja (int x, int y){
 int wylosuj (double *prawdopodobienstwa, int zakres, int losowa){
 
 
-    int *kulki  = malloc (1000 * sizeof (int));
+    int kulki [1000] = {0};
     int poz_kul = 0;
     for (int i=0;i<zakres;i++){
         for (int j=0;j<prawdopodobienstwa[i]*1000;j++){
