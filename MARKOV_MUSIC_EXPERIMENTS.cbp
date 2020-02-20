@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="RYTM.h" />
+		<Unit filename="SKALE.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SKALE.h" />
 		<Unit filename="SORT.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -2,35 +2,21 @@
 #include <stdlib.h>
 #include "STRUKTURY.h"
 #include <string.h>
-#include "RYTM.h"
+
 
 #define skip fscanf(plik,"%s",trash)
-char *lista_dzwiekow [ILE_DZWIEKOW];
 
-void lista_z_pliku (){
-    FILE *plik = fopen ("config\\LISTA_DZWIEKOW.txt","rt");
 
-    if (!plik){
-        printf("\nPodczas otwierania pliku LISTA_DZWIEKOW.txt wystapil blad\n");
-        exit (1);
-    }
+int czy_dzwiek(char *napis, Ustawienia ust);
 
-    for (int i=0; i<ILE_DZWIEKOW; i++){
-        lista_dzwiekow[i] = malloc (5* sizeof (char));
-        fscanf (plik,"%s",lista_dzwiekow[i]);
-    }
-
-    fclose(plik);
-}
-
-int znajdz_dzwiek (char *dzwiek){
+int znajdz_dzwiek (char *dzwiek, Ustawienia ust){
     if (dzwiek == NULL)
         return -1;
-    if (!czy_dzwiek(dzwiek)){
+    if (!czy_dzwiek(dzwiek, ust)){
         return -1;
     }
     for (int i=0;i<ILE_DZWIEKOW;i++){
-        if (!strcmp(lista_dzwiekow[i],dzwiek))
+        if (!strcmp(ust.lista_dzw[i],dzwiek))
             return i;
     }
 
@@ -43,7 +29,7 @@ int znajdz_dzwiek (char *dzwiek){
         nowy_dzwiek [i] = dzwiek [i];
     }
     free (nowy_dzwiek);
-    return znajdz_dzwiek(nowy_dzwiek);
+    return znajdz_dzwiek(nowy_dzwiek,ust);
 }
 
 Utwor czytaj_z_pliku (char *nazwa_pliku){
@@ -53,10 +39,8 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
         exit(1);
     }
     int ile_pop=0;
-    //char *trash = malloc (5056*sizeof (char));
     char trash [2048];
     while (fscanf (plik,"%s",trash) != EOF){
-        //if (znajdz_dzwiek(trash) != -1)
             ile_pop++;
     }
     Utwor utwor;
@@ -68,15 +52,12 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
     while (i<ile_pop){
         dzwiek = malloc (2048*sizeof (char));
         fscanf (plik,"%s",dzwiek);
-            //if (znajdz_dzwiek(dzwiek) != -1){
             utwor.dzwieki[i] = dzwiek;
             i++;
-           // }
         }
 
         utwor.dlugosc = ile_pop;
 
-   // free (trash);
     fclose(plik);
 
     return utwor;
@@ -85,11 +66,30 @@ Utwor czytaj_z_pliku (char *nazwa_pliku){
 Ustawienia wczytaj_ustawienia () {
     Ustawienia ust;
     int wybor;
+    ust.lista_dzw = malloc (ILE_DZWIEKOW * sizeof (char *));
+
+    FILE *lista = fopen ("config\\LISTA_DZWIEKOW.txt","rt");
+    if (!lista){
+        printf("\nPodczas otwierania pliku LISTA_DZWIEKOW.txt wystapil blad\n");
+        exit (1);
+    }
+
+
+    for (int i=0; i<ILE_DZWIEKOW; i++){
+        ust.lista_dzw[i] = malloc (5* sizeof (char));
+        fscanf (lista,"%s",ust.lista_dzw[i]);
+    }
+
+    fclose(lista);
+
+
     printf ("Wybierz:\n[0] Ustawienia z pliku\n[1] Ustawienia reczne\n");
     scanf("%d",&wybor);
     if (wybor){
         printf ("Podaj dlugosc utworu: ");
         scanf ("%d", &ust.dlugosc_utworu);
+        printf ("Podaj dlugosc pojedynczego lancucha: ");
+        scanf ("%d",&ust.dlugosc_lanc);
         printf ("Podaj nazwe pliku z melodia: ");
         ust.nazwa_melodia = malloc (256 * sizeof (char));
         scanf ("%s",ust.nazwa_melodia);
@@ -130,6 +130,8 @@ Ustawienia wczytaj_ustawienia () {
         char *trash = malloc (256 * sizeof (char));
         skip;
         fscanf (plik,"%d", &ust.dlugosc_utworu);
+        skip;
+        fscanf (plik, "%d", &ust.dlugosc_lanc);
         skip;
         ust.nazwa_melodia = malloc (256 * sizeof (char));
         fscanf (plik,"%s",ust.nazwa_melodia);

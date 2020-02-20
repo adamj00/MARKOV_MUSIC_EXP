@@ -1,14 +1,13 @@
 #include "STRUKTURY.h"
-#include "PLIKI.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include "dev.h"
 
 
 
 double rozklad_stacjonarny [ILE_DZWIEKOW];
+int znajdz_dzwiek(char *dzwiek, Ustawienia ust);
 
 void rozklad_z_pliku(){
     FILE *plik = fopen ("config\\PORZADANY_ROZKLAD.txt","rt");
@@ -26,10 +25,21 @@ void rozklad_z_pliku(){
 
 }
 
+void printMacierz (double **macierz){
+    FILE *plik = fopen ("output\\MACIERZ_PRZEJSC.txt","wt");
+    if (!plik)
+        exit(1);
+    for (int i=0;i<ILE_DZWIEKOW;i++){
+        for (int j=0;j<ILE_DZWIEKOW;j++){
+            fprintf (plik,"%lf ",macierz[i][j]);
+        }
+        fprintf(plik,"\n");
+    }
+    fclose(plik);
+}
 
-void analizuj_rozklad (Utwor utwor, double **rozklad){
+void analizuj_rozklad (Utwor utwor, double **rozklad, Ustawienia ust){
     rozklad_z_pliku();
-    lista_z_pliku();
     for (int i=0;i<ILE_DZWIEKOW;i++){
         for (int j=0;j<ILE_DZWIEKOW;j++)
             rozklad [i][j] = 0;
@@ -37,8 +47,8 @@ void analizuj_rozklad (Utwor utwor, double **rozklad){
 
     int poz1,poz2;
     for (int i=0; i<utwor.dlugosc-1;i++){
-            poz1 = znajdz_dzwiek(utwor.dzwieki[i]);
-            poz2 = znajdz_dzwiek(utwor.dzwieki[i+1]);
+            poz1 = znajdz_dzwiek(utwor.dzwieki[i],ust);
+            poz2 = znajdz_dzwiek(utwor.dzwieki[i+1],ust);
             if (poz1 == -1 || poz2 == -1)   continue;
             rozklad [poz1][poz2] ++;
 
@@ -80,7 +90,7 @@ int wylosuj (double *prawdopodobienstwa, int zakres, int losowa){
     }
 
     int wynik = kulki [losowa%poz_kul];
-    //free (kulki);
+
     return wynik%zakres;
 }
 
@@ -106,17 +116,17 @@ Markov generuj_lancuch (int dlugosc,double **macierz, int zarodek){
     return lancuch;
 }
 
-Utwor sklej_utwor (Markov *lancuchy,  int ile_lancuchow){
+Utwor sklej_utwor (Markov *lancuchy,  int ile_lancuchow, Ustawienia ust){
     Utwor utwor;
-    utwor.dlugosc = ile_lancuchow * dlugosc_lancucha;
+    utwor.dlugosc = ile_lancuchow * ust.dlugosc_lanc;
 
     utwor.dzwieki = malloc (utwor.dlugosc * sizeof (char *));
 
     int idx;
     for (int i=0;i<ile_lancuchow;i++){
         for (int j=0;j<lancuchy[i].dlugosc;j++){
-            idx = i*dlugosc_lancucha+j;
-            utwor.dzwieki[idx] = lista_dzwiekow[lancuchy[i].lancuch[j]];
+            idx = i*ust.dlugosc_lanc+j;
+            utwor.dzwieki[idx] = ust.lista_dzw[lancuchy[i].lancuch[j]];
         }
     }
 

@@ -1,0 +1,33 @@
+void left(long frequency, long length) {
+  long delayValue = 1000000/frequency/2; 
+  long numCycles = frequency * length/ 1000;
+ for (long i=0; i < numCycles; i++){ 
+    digitalWrite(2,HIGH); 
+    digitalWrite(3, LOW);
+    delayMicroseconds(delayValue);
+    digitalWrite(2,LOW);
+    digitalWrite(3, HIGH);
+    delayMicroseconds(delayValue);
+  }
+}
+void right(long frequency, long length) {
+  long delayValue = 1000000/frequency/2;
+  long numCycles = frequency * length/ 1000;
+ for (long i=0; i < numCycles; i++){ 
+    digitalWrite(3,HIGH);
+    digitalWrite(2, LOW);
+    delayMicroseconds(delayValue); 
+    digitalWrite(3,LOW); 
+    digitalWrite(2, HIGH);
+    delayMicroseconds(delayValue); 
+  }
+}
+
+void play (int frequency, int length_ms, int lr){
+  if (lr == 1){
+    left (frequency, length_ms);
+  }
+   else {
+    right (frequency, length_ms);
+   }
+}

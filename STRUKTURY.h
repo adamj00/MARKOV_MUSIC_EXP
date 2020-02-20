@@ -2,7 +2,7 @@
 #define STRUKTURY_H_INCLUDED
 
 #define ILE_DZWIEKOW 49
-#define dlugosc_lancucha 8
+
 
 typedef struct Rytm{
     int dlugosc;
@@ -29,8 +29,10 @@ typedef struct Skala{
 
 typedef struct Ustawienia{
     int dlugosc_utworu;
+    int dlugosc_lanc;
     char *nazwa_melodia;
     char *nazwa_rytm;
+    char **lista_dzw;
     int algorytm;
     char *metrum;
     char *tempo;

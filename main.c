@@ -5,12 +5,11 @@
 #include "STRUKTURY.h"
 #include "MARKOV.h"
 #include "RYTM.h"
-#define PLIK "input\\BACH.abc"
 #include <time.h>
 #include  "SKALE.h"
+#include "ARDUINO.h"
 int main()
 {
-    lista_z_pliku();
 
     Ustawienia ust = wczytaj_ustawienia();
 
@@ -26,34 +25,36 @@ int main()
     Skala skala;
 
     if (!ust.algorytm)
-        analizuj_rozklad(zrodlo, rozklad);
+        analizuj_rozklad(zrodlo, rozklad,ust);
 
     else {
-        analizuj_interwaly(zrodlo);
+        analizuj_interwaly(zrodlo, ust);
         skala = stworz_skale(ust);
     }
-    Markov lancuchy[ust.dlugosc_utworu/dlugosc_lancucha];
+    Markov lancuchy[ust.dlugosc_utworu/ust.dlugosc_lanc];
 
     time_t tt;
     int zarodek = time(&tt);
     srand (zarodek);
 
-    for (int i=0;i<ust.dlugosc_utworu/dlugosc_lancucha;i++){
+    for (int i=0;i<ust.dlugosc_utworu/ust.dlugosc_lanc;i++){
          zarodek = rand();
          if (!ust.algorytm)
-            lancuchy[i] = generuj_lancuch(dlugosc_lancucha,rozklad,zarodek);
+            lancuchy[i] = generuj_lancuch(ust.dlugosc_lanc,rozklad,zarodek);
          else{
-            lancuchy[i] = generuj_lancuch_SKALE(dlugosc_lancucha,skala,zarodek);
+            lancuchy[i] = generuj_lancuch_SKALE(ust.dlugosc_lanc,skala,zarodek, ust);
          }
     }
 
-    sortuj(lancuchy,ust.dlugosc_utworu/dlugosc_lancucha);
+    sortuj(lancuchy,ust.dlugosc_utworu/ust.dlugosc_lanc);
 
-    Utwor rezultat = sklej_utwor(lancuchy,ust.dlugosc_utworu/dlugosc_lancucha);
+    rozwin_program(lancuchy,ust.dlugosc_utworu/ust.dlugosc_lanc);
+
+    Utwor rezultat = sklej_utwor(lancuchy,ust.dlugosc_utworu/ust.dlugosc_lanc,ust);
 
     Utwor do_rytmu = czytaj_z_pliku(ust.nazwa_rytm);
 
-    Rytm rytm = analizuj_rytm(do_rytmu);
+    Rytm rytm = analizuj_rytm(do_rytmu, ust);
 
     nadaj_rytm(&rezultat,rytm);
 

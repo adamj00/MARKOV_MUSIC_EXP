@@ -66,3 +66,75 @@
 
 1581954424 c:\users\adamo\desktop\studia_inf\wdpc\projekt\markov_music_experiments\skale.h
 
+1582154063 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\dev.c
+	<stdio.h>
+	<stdlib.h>
+	"STRUKTURY.h"
+	"PLIKI.h"
+	"MARKOV.h"
+
+1582151781 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\struktury.h
+
+1582153387 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\pliki.h
+	"STRUKTURY.h"
+
+1582152043 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\markov.h
+
+1582154131 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\pliki.c
+	<stdio.h>
+	<stdlib.h>
+	"STRUKTURY.h"
+	<string.h>
+
+1582152209 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\rytm.h
+
+1582154063 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\rytm.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"STRUKTURY.h"
+
+1582154063 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\skale.c
+	<stdlib.h>
+	<stdio.h>
+	"STRUKTURY.h"
+	<time.h>
+
+1581805656 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\sort.c
+	<stdlib.h>
+	"STRUKTURY.h"
+	<stdio.h>
+
+1582153633 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PLIKI.h"
+	"SORT.h"
+	"STRUKTURY.h"
+	"MARKOV.h"
+	"RYTM.h"
+	<time.h>
+	"SKALE.h"
+	"ARDUINO.h"
+
+1581682258 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\sort.h
+
+1582153627 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\skale.h
+
+1582125187 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\arduino.h
+
+1582154215 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\markov.c
+	"STRUKTURY.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+
+1581012573 c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\dev.h
+
+1582125310 source:c:\users\adamo\desktop\studia_inf\wdpc\projekt\finalny_projekt\markov_music_experiments\arduino.c
+	<stdio.h>
+	<stdlib.h>
+	"STRUKTURY.h"
+	"ARDUINO.h"
+

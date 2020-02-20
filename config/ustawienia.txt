@@ -1,12 +1,13 @@
-długość: 1000
+długość: 500
+długość_łańcucha: 100
 melodia: input\\BACH.abc
 rytm: input\\BACH.abc
 algorytm: 0
-metrum: 4/4
+metrum: 3/4
 tempo: 100
 //ustawienia_skali
-skala: 
-dźw_startowy: 
+skala: 2
+dźw_startowy: c
 //niestandardowa_skala
-dł_cyklu: 
-cykl: 
+dł_cyklu: 1
+cykl: 1
